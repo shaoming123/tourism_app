@@ -42,6 +42,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: user != null ? const Home() : const SignIn(),
       debugShowCheckedModeBanner: false,
+      routes: {
+        '/home': (context) => const Home(),
+        '/profile': (context) => const Profile(),
+      },
     );
   }
 }

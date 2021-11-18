@@ -18,17 +18,18 @@ class _BottomNavigationBarTravelState extends State<BottomNavigationBarTravel> {
   void _onItemTapped(int currentIndex) {
     setState(() {
       _selectedIndex = currentIndex;
+      switch (_selectedIndex) {
+        case 0:
+          Navigator.pushNamed(context, '/home');
+          break;
+        default:
+          Navigator.pushNamed(context, '/profile');
+      }
     });
   }
 
   var bottomNavStyle =
       GoogleFonts.lato(fontSize: 12, fontWeight: FontWeight.w500);
-  final List _children = [
-    Home(),
-    Home(),
-    Home(),
-    Profile(),
-  ];
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
